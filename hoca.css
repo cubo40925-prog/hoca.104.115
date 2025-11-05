@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background: linear-gradient(to bottom, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+    font-family: Arial, sans-serif;
+}
+
+.ocean {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Bong bóng */
+.bubble {
+    position: absolute;
+    bottom: -50px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: rise 8s infinite ease-in;
+}
+
+@keyframes rise {
+    to {
+        bottom: 110vh;
+        opacity: 0;
+    }
+}
+
+/* Cá */
+.fish {
+    position: absolute;
+    animation: swim 15s infinite linear;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.4));
+}
+
+@keyframes swim {
+    0% {
+        left: -150px;
+    }
+    100% {
+        left: calc(100vw + 150px);
+    }
+}
+
+/* Animation cho đuôi cá */
+.tail {
+    animation: tail-wave 0.4s infinite alternate ease-in-out;
+    transform-origin: right center;
+}
+
+@keyframes tail-wave {
+    from { 
+        transform: rotate(-8deg); 
+    }
+    to { 
+        transform: rotate(8deg); 
+    }
+}
+
+/* Animation cho vây ngực */
+.fin-chest {
+    animation: fin-wave 0.6s infinite alternate ease-in-out;
+    transform-origin: center;
+}
+
+@keyframes fin-wave {
+    from { 
+        transform: rotate(-15deg); 
+    }
+    to { 
+        transform: rotate(15deg); 
+    }
+}
+
+/* Rong biển */
+.seaweed {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 150px;
+    background: linear-gradient(to right, #065f46, #059669);
+    border-radius: 50% 50% 0 0;
+    animation: sway 3s infinite ease-in-out;
+    transform-origin: bottom center;
+}
+
+@keyframes sway {
+    0%, 100% { 
+        transform: rotate(-3deg); 
+    }
+    50% { 
+        transform: rotate(3deg); 
+    }
+}
+
+.seaweed:nth-child(1) { 
+    left: 10%; 
+    height: 120px; 
+}
+
+.seaweed:nth-child(2) { 
+    left: 30%; 
+    height: 180px; 
+    animation-delay: 0.5s; 
+}
+
+.seaweed:nth-child(3) { 
+    left: 50%; 
+    height: 150px; 
+    animation-delay: 1s; 
+}
+
+.seaweed:nth-child(4) { 
+    left: 70%; 
+    height: 140px; 
+    animation-delay: 1.5s; 
+}
+
+.seaweed:nth-child(5) { 
+    left: 85%; 
+    height: 160px; 
+    animation-delay: 2s; 
+}
+
+/* Tiêu đề */
+.title {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+/* Cá la hét */
+.screaming-fish {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: moveAndFlip 3s infinite ease-in-out;
+}
+
+@keyframes moveAndFlip {
+    0% {
+        left: calc(100% - 150px);
+        transform: translateY(-50%) scaleX(-1);
+    }
+    50% {
+        left: 0;
+        transform: translateY(-50%) scaleX(1);
+    }
+    100% {
+        left: calc(100% - 150px);
+        transform: translateY(-50%) scaleX(-1);
+    }
+}
+
+/* Cá 1: bơi từ phải sang trái, giữa màn hình */
+.fish1 {
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    animation: move1 10s linear infinite;
+}
+
+@keyframes move1 {
+    0% { left: 100%; transform: scaleX(1); }
+    100% { left: -150px; transform: scaleX(1); }
+}
+
+/* Cá 2: bơi từ trái sang phải, phía trên */
+.fish2 {
+    position: absolute;
+    top: 25%;
+    width: 120px;
+    animation: move2 12s ease-in-out infinite;
+}
+
+@keyframes move2 {
+    0% { left: -150px; transform: scaleX(-1); }
+    50% { top: 20%; }
+    100% { left: 100%; transform: scaleX(-1); }
+}
+
+/* Cá 3: bơi chéo lên rồi chéo xuống */
+.fish3 {
+    position: absolute;
+    bottom: 20%;
+    width: 80px;
+    animation: move3 14s ease-in-out infinite;
+}
+
+@keyframes move3 {
+    0% { left: -100px; bottom: 15%; transform: scaleX(1); }
+    50% { left: 50%; bottom: 40%; transform: scaleX(1); }
+    100% { left: 100%; bottom: 25%; transform: scaleX(1); }
+}
+
+/* Cá 4: bơi ngược từ phải sang trái phía dưới */
+.fish4 {
+    position: absolute;
+    bottom: 10%;
+    width: 90px;
+    animation: move4 11s linear infinite;
+}
+
+@keyframes move4 {
+    0% { left: 100%; transform: scaleX(-1); }
+    100% { left: -120px; transform: scaleX(-1); }
+}
+

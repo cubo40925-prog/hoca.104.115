@@ -1,170 +1,111 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cá Bơi Lội</title>
-    <link rel="stylesheet" href="hoca.css">
+    <meta charset="utf-8">
+    <title>Hồ Cá Vui Nhộn - Nhạc Local Siêu Đỉnh</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        #controls button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: 3px solid #fff;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            backdrop-filter: blur(20px);
+            transition: all 0.4s;
+        }
+        #controls button:hover {
+            background: #ff6b6b;
+            transform: scale(1.2);
+            box-shadow: 0 0 30px #ff6b6b;
+        }
+    </style>
 </head>
 <body>
-    <div class="title">🌊 Hồ cá 🌊</div>
-    <div class="ocean">
-        <div class="seaweed"></div>
-        <div class="seaweed"></div>
-        <div class="seaweed"></div>
-        <div class="seaweed"></div>
-        <div class="seaweed"></div>
-
-        <!-- Cá vàng cam -->
-        <div class="fish" style="top: 40%;">
-            <svg viewBox="0 0 120 60" width="120" height="60">
-                <!-- Thân cá -->
-                <ellipse cx="50" cy="30" rx="35" ry="18" fill="url(#gradient1)" stroke="#d97706" stroke-width="1"/>
-                
-                <!-- Vây lưng -->
-                <path d="M 40 12 Q 45 5, 50 12 L 45 18 Z" fill="#fb923c" stroke="#d97706" stroke-width="0.5"/>
-                
-                <!-- Vây ngực -->
-                <ellipse cx="35" cy="35" rx="8" ry="12" fill="#fbbf24" opacity="0.8" class="fin-chest"/>
-                
-                <!-- Vây bụng -->
-                <path d="M 45 42 Q 48 50, 52 42 Z" fill="#fb923c" stroke="#d97706" stroke-width="0.5"/>
-                
-                <!-- Đuôi cá hình chữ V -->
-                <path d="M 15 30 Q 5 15, 0 10 M 15 30 Q 5 45, 0 50" 
-                      stroke="#f59e0b" stroke-width="8" fill="none" stroke-linecap="round" class="tail"/>
-                
-                <!-- Vây đuôi màu -->
-                <path d="M 15 30 L 2 12 L 8 30 Z" fill="#fb923c" opacity="0.9"/>
-                <path d="M 15 30 L 2 48 L 8 30 Z" fill="#fb923c" opacity="0.9"/>
-                
-                <!-- Vảy cá -->
-                <circle cx="45" cy="25" r="3" fill="white" opacity="0.3"/>
-                <circle cx="40" cy="30" r="3" fill="white" opacity="0.3"/>
-                <circle cx="50" cy="32" r="3" fill="white" opacity="0.3"/>
-                
-                <!-- Mắt -->
-                <circle cx="70" cy="25" r="6" fill="white"/>
-                <circle cx="72" cy="24" r="4" fill="black"/>
-                <circle cx="73" cy="23" r="1.5" fill="white"/>
-                
-                <!-- Miệng -->
-                <path d="M 80 28 Q 82 30, 80 32" stroke="#d97706" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                
-                <defs>
-                    <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-            </svg>
-        </div>
-
-        <!-- Cá hồng -->
-        <div class="fish" style="top: 60%; animation-duration: 12s; animation-delay: 2s;">
-            <svg viewBox="0 0 120 60" width="100" height="50">
-                <ellipse cx="50" cy="30" rx="35" ry="18" fill="url(#gradient2)" stroke="#db2777" stroke-width="1"/>
-                <path d="M 40 12 Q 45 5, 50 12 L 45 18 Z" fill="#f472b6" stroke="#db2777" stroke-width="0.5"/>
-                <ellipse cx="35" cy="35" rx="8" ry="12" fill="#fbcfe8" opacity="0.8" class="fin-chest"/>
-                <path d="M 45 42 Q 48 50, 52 42 Z" fill="#f472b6" stroke="#db2777" stroke-width="0.5"/>
-                <path d="M 15 30 Q 5 15, 0 10 M 15 30 Q 5 45, 0 50" 
-                      stroke="#ec4899" stroke-width="8" fill="none" stroke-linecap="round" class="tail"/>
-                <path d="M 15 30 L 2 12 L 8 30 Z" fill="#f472b6" opacity="0.9"/>
-                <path d="M 15 30 L 2 48 L 8 30 Z" fill="#f472b6" opacity="0.9"/>
-                <circle cx="45" cy="25" r="3" fill="white" opacity="0.3"/>
-                <circle cx="40" cy="30" r="3" fill="white" opacity="0.3"/>
-                <circle cx="50" cy="32" r="3" fill="white" opacity="0.3"/>
-                <circle cx="70" cy="25" r="6" fill="white"/>
-                <circle cx="72" cy="24" r="4" fill="black"/>
-                <circle cx="73" cy="23" r="1.5" fill="white"/>
-                <path d="M 80 28 Q 82 30, 80 32" stroke="#db2777" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                <defs>
-                    <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:#f9a8d4;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-            </svg>
-        </div>
-
-        <img src="screaming_fish.gif" alt="Cá 1" class="fish1" />
-        <img src="cachabach.gif" alt="Cá 2" class="fish2" />
-        <img src="spinning_fish.gif" alt="Cá 3" class="fish3" />
-        <img src="clown_fish.gif" alt="Cá 4" class="fish4" />
-
-
-        <!-- Cá tím -->
-        <div class="fish" style="top: 30%; animation-duration: 18s; animation-delay: 5s;">
-            <svg viewBox="0 0 120 60" width="110" height="55">
-                <ellipse cx="50" cy="30" rx="35" ry="18" fill="url(#gradient3)" stroke="#7c3aed" stroke-width="1"/>
-                <path d="M 40 12 Q 45 5, 50 12 L 45 18 Z" fill="#a78bfa" stroke="#7c3aed" stroke-width="0.5"/>
-                <ellipse cx="35" cy="35" rx="8" ry="12" fill="#c4b5fd" opacity="0.8" class="fin-chest"/>
-                <path d="M 45 42 Q 48 50, 52 42 Z" fill="#a78bfa" stroke="#7c3aed" stroke-width="0.5"/>
-                <path d="M 15 30 Q 5 15, 0 10 M 15 30 Q 5 45, 0 50" 
-                      stroke="#8b5cf6" stroke-width="8" fill="none" stroke-linecap="round" class="tail"/>
-                <path d="M 15 30 L 2 12 L 8 30 Z" fill="#a78bfa" opacity="0.9"/>
-                <path d="M 15 30 L 2 48 L 8 30 Z" fill="#a78bfa" opacity="0.9"/>
-                <circle cx="45" cy="25" r="3" fill="white" opacity="0.3"/>
-                <circle cx="40" cy="30" r="3" fill="white" opacity="0.3"/>
-                <circle cx="50" cy="32" r="3" fill="white" opacity="0.3"/>
-                <circle cx="70" cy="25" r="6" fill="white"/>
-                <circle cx="72" cy="24" r="4" fill="black"/>
-                <circle cx="73" cy="23" r="1.5" fill="white"/>
-                <path d="M 80 28 Q 82 30, 80 32" stroke="#7c3aed" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                <defs>
-                    <linearGradient id="gradient3" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:#c4b5fd;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-            </svg>
-        </div>
-
-        <!-- Cá xanh lá -->
-        <div class="fish" style="top: 70%; animation-duration: 14s; animation-delay: 7s;">
-            <svg viewBox="0 0 120 60" width="90" height="45">
-                <ellipse cx="50" cy="30" rx="35" ry="18" fill="url(#gradient4)" stroke="#059669" stroke-width="1"/>
-                <path d="M 40 12 Q 45 5, 50 12 L 45 18 Z" fill="#34d399" stroke="#059669" stroke-width="0.5"/>
-                <ellipse cx="35" cy="35" rx="8" ry="12" fill="#6ee7b7" opacity="0.8" class="fin-chest"/>
-                <path d="M 45 42 Q 48 50, 52 42 Z" fill="#34d399" stroke="#059669" stroke-width="0.5"/>
-                <path d="M 15 30 Q 5 15, 0 10 M 15 30 Q 5 45, 0 50" 
-                      stroke="#10b981" stroke-width="8" fill="none" stroke-linecap="round" class="tail"/>
-                <path d="M 15 30 L 2 12 L 8 30 Z" fill="#34d399" opacity="0.9"/>
-                <path d="M 15 30 L 2 48 L 8 30 Z" fill="#34d399" opacity="0.9"/>
-                <circle cx="45" cy="25" r="3" fill="white" opacity="0.3"/>
-                <circle cx="40" cy="30" r="3" fill="white" opacity="0.3"/>
-                <circle cx="50" cy="32" r="3" fill="white" opacity="0.3"/>
-                <circle cx="70" cy="25" r="6" fill="white"/>
-                <circle cx="72" cy="24" r="4" fill="black"/>
-                <circle cx="73" cy="23" r="1.5" fill="white"/>
-                <path d="M 80 28 Q 82 30, 80 32" stroke="#059669" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                <defs>
-                    <linearGradient id="gradient4" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:#6ee7b7;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-            </svg>
-        </div>
+    <div id="content">
+        <div id="shark"><img src="images/shark.png" alt="Cá mập"></div>
+        <div id="diver1"><img src="images/diver1.png"></div>
+        <div id="diver2"><img src="images/diver2.png"></div>
+        <div id="diver3"><img src="images/diver3.png"></div>
+        <div id="turtle"><img src="images/turtle.png"></div>
+        <div id="fish-container"></div>
     </div>
 
-    <script>
-        function createBubble() {
-            const bubble = document.createElement('div');
-            bubble.className = 'bubble';
-            const size = Math.random() * 30 + 10;
-            bubble.style.width = size + 'px';
-            bubble.style.height = size + 'px';
-            bubble.style.left = Math.random() * 100 + '%';
-            bubble.style.animationDuration = (Math.random() * 5 + 5) + 's';
-            document.querySelector('.ocean').appendChild(bubble);
+    <!-- 2 NÚT SIÊU XỊN -->
+    <div id="controls">
+        <button onclick="changeBackground()">Đổi Nền (PNG)</button>
+        <button onclick="toggleMusic()" id="musicBtn">Bật Nhạc Local</button>
+    </div>
 
-            setTimeout(() => {
-                bubble.remove();
-            }, 10000);
+    <!-- NHẠC TỪ FILE LOCAL -->
+    <audio id="oceanSound" loop preload="auto">
+        <source src="music/ocean.mp3" type="audio/mp3">
+        <source src="music/ocean.wav" type="audio/wav">
+        <source src="music/ocean.ogg" type="audio/ogg">
+        Trình duyệt không hỗ trợ âm thanh.
+    </audio>
+
+    <script>
+        // Tạo 50 con cá
+        const container = document.getElementById('fish-container');
+        for (let i = 0; i < 50; i++) {
+            const fish = document.createElement('div');
+            fish.className = 'fish';
+            fish.innerHTML = `<img src="images/fish-${i % 2 === 0 ? 'gold' : 'white'}.png">`;
+            fish.style.top = Math.random() * 80 + 10 + '%';
+            fish.style.left = Math.random() * 100 + '%';
+            fish.style.animationDuration = (Math.random() * 25 + 25) + 's';
+            fish.style.animationDelay = Math.random() * 20 + 's';
+            container.appendChild(fish);
         }
 
-        setInterval(createBubble, 500);
+        // Đổi nền PNG
+        let bgIndex = 0;
+        const backgrounds = ['bg1.png', 'bg2.png', 'bg3.png', 'bg4.png'];
+        function changeBackground() {
+            bgIndex = (bgIndex + 1) % backgrounds.length;
+            document.body.style.backgroundImage = `url('images/backgrounds/${backgrounds[bgIndex]}')`;
+            unlockAudio();
+        }
+
+        // NHẠC LOCAL - FIX CHROME AUTOPLAY
+        const audio = document.getElementById('oceanSound');
+        let unlocked = false;
+
+        function unlockAudio() {
+            if (unlocked) return;
+            audio.play().then(() => {
+                unlocked = true;
+                console.log("Nhạc local đã được mở khóa!");
+            }).catch(err => {
+                console.log("Chưa thể phát nhạc:", err);
+            });
+        }
+
+        function toggleMusic() {
+            unlockAudio();
+            if (audio.paused) {
+                audio.volume = 0.6;
+                audio.play();
+                document.getElementById('musicBtn').innerHTML = "Tắt Nhạc";
+            } else {
+                audio.pause();
+                document.getElementById('musicBtn').innerHTML = "Bật Nhạc Local";
+            }
+        }
+
+        // Mở khóa khi click bất kỳ đâu
+        document.body.addEventListener('click', unlockAudio, { once: true });
+        document.body.addEventListener('touchstart', unlockAudio, { once: true });
+
+        // Tự động thử phát khi load xong
+        window.addEventListener('load', () => {
+            audio.volume = 0.6;
+        });
     </script>
 </body>
 </html>

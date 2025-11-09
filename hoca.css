@@ -53,3 +53,22 @@ body {
     right: 20px;
     z-index: 9999;
 }
+#clown_fish {
+    position: absolute;
+    top: 200px;
+    left: 50px;
+    animation: clownSwim 15s ease-in-out infinite;
+}
+
+#clown_fish img {
+    width: 100px; /* nhỏ hơn cá lớn để nổi bật */
+    filter: drop-shadow(0 0 10px rgba(255,255,0,0.8));
+}
+
+@keyframes clownSwim {
+    0%   { transform: translate(0, 0) scaleX(1); }
+    25%  { transform: translate(200px, 50px) scaleX(1); }
+    50%  { transform: translate(400px, -30px) scaleX(-1); }
+    75%  { transform: translate(600px, 70px) scaleX(1); }
+    100% { transform: translate(800px, 0) scaleX(-1); }
+}

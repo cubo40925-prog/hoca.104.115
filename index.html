@@ -43,9 +43,9 @@
     </div>
 
     <!-- NHẠC TỪ FILE -->
-    <audio id="oceanSound" loop preload="auto"></audio>
+    <audio id="musicLofi" loop preload="auto"></audio>
 <script>
-const audio = document.getElementById('oceanSound');
+const audio = document.getElementById('musicLofi');
 const tracks = ["inthepool.mp3", "stardust.mp3", "dramamine.mp3"];
 let current = 0;
 
@@ -87,7 +87,7 @@ function nextTrack() {
         }
 
         // NHẠC LOCAL - FIX CHROME AUTOPLAY
-        const audio = document.getElementById('oceanSound');
+        const audio = document.getElementById('musicLofi');
         let unlocked = false;
 
         function unlockAudio() {

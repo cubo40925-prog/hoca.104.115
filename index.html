@@ -46,8 +46,9 @@
     <audio id="musicLofi" loop preload="auto"></audio>
 <script>
 const audio = document.getElementById('musicLofi');
-const tracks = ["inthepool.mp3", "stardust.mp3", "dramamine.mp3"];
+let unlocked = false;
 let current = 0;
+const tracks = ["inthepool.mp3", "stardust.mp3", "dramamine.mp3"];
 
 // play bài đầu
 audio.src = tracks[current];
@@ -79,17 +80,12 @@ function nextTrack() {
 
         // Đổi nền PNG
         let bgIndex = 0;
-        const backgrounds = ['bg1.jpg', 'bg2.png', 'bg3.jpg', 'bg4.webp'];
+        const backgrounds = ['images/bg1.jpg', 'images/bg2.png', 'images/bg3.jpg', 'images/bg4.webp'];
         function changeBackground() {
             bgIndex = (bgIndex + 1) % backgrounds.length;
-            document.body.style.backgroundImage = `url('images/backgrounds/${backgrounds[bgIndex]}')`;
+            document.body.style.backgroundImage = `url('images/${backgrounds[bgIndex]}')`;
             unlockAudio();
         }
-
-        // NHẠC LOCAL - FIX CHROME AUTOPLAY
-        const audio = document.getElementById('musicLofi');
-        let unlocked = false;
-
         function unlockAudio() {
             if (unlocked) return;
             audio.play().then(() => {

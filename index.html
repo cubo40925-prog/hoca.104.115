@@ -43,18 +43,25 @@
     </div>
 
     <!-- NHẠC TỪ FILE -->
-    <audio id="oceanSound" loop preload="auto">
-        <source src="inthepool" type="mp3">
-        <source src="inthepool" type="wav">
-        <source src="inthepool" type="ogg">
-        <source src="stardust" type="mp3">
-        <source src="stardust" type="wav">
-        <source src="stardust" type="ogg">
-        <source src="dramamine" type="mp3">
-        <source src="dramamine" type="wav">
-        <source src="dramamine" type="ogg">
-        Trình duyệt không hỗ trợ âm thanh.
-    </audio>
+    <audio id="oceanSound" loop preload="auto"></audio>
+<script>
+const audio = document.getElementById('oceanSound');
+const tracks = ["inthepool.mp3", "stardust.mp3", "dramamine.mp3"];
+let current = 0;
+
+// play bài đầu
+audio.src = tracks[current];
+audio.play();
+
+// đổi bài
+function nextTrack() {
+    current = (current + 1) % tracks.length;
+    audio.src = tracks[current];
+    audio.play();
+}
+</script>
+<button onclick="nextTrack()">Bài tiếp</button>
+
 
     <script>
         // Tạo 50 con cá

@@ -2,8 +2,8 @@
 <html lang="vi">
 <head>
     <meta charset="utf-8">
-    <title>Hồ Cá Vui Nhộn - Nhạc Local Siêu Đỉnh</title>
-    <link rel="stylesheet" href="mystyle.css">
+    <title>Hồ Cá Vui Nhộn - Chill Chill</title>
+    <link rel="stylesheet" href="hoca.css">
     <style>
         #controls button {
             padding: 15px 30px;
@@ -27,25 +27,26 @@
 </head>
 <body>
     <div id="content">
-        <div id="shark"><img src="images/shark.png" alt="Cá mập"></div>
-        <div id="diver1"><img src="images/diver1.png"></div>
+        <div id="shark"><img src="images/shark.gif" alt="Cá mập"></div>
+        <div id="diver1"><img src="images/tholan.png"></div>
         <div id="diver2"><img src="images/diver2.png"></div>
         <div id="diver3"><img src="images/diver3.png"></div>
         <div id="turtle"><img src="images/turtle.png"></div>
+        <div id="clown_fish"><img src="images/clown_fish.gif"></div>
         <div id="fish-container"></div>
     </div>
 
     <!-- 2 NÚT SIÊU XỊN -->
     <div id="controls">
         <button onclick="changeBackground()">Đổi Nền (PNG)</button>
-        <button onclick="toggleMusic()" id="musicBtn">Bật Nhạc Local</button>
+        <button onclick="toggleMusic()" id="musicBtn">Bật Nhạc</button>
     </div>
 
-    <!-- NHẠC TỪ FILE LOCAL -->
+    <!-- NHẠC TỪ FILE -->
     <audio id="oceanSound" loop preload="auto">
-        <source src="music/ocean.mp3" type="audio/mp3">
-        <source src="music/ocean.wav" type="audio/wav">
-        <source src="music/ocean.ogg" type="audio/ogg">
+        <source src="inthepool.mp3" type="mp3">
+        <source src="dramamine.mp3" type="mp3">
+        <source src="stardust.mp3" type="mp3">
         Trình duyệt không hỗ trợ âm thanh.
     </audio>
 

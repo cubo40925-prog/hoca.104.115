@@ -71,11 +71,11 @@ function nextTrack() {
 ];
     const container = document.getElementById('fish-container');
 
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 25; i++) {
     const fish = document.createElement('div');
     fish.className = 'fish';
     
-    // Lấy ảnh theo thứ tự, lặp lại 3 ảnh
+    // Lấy ảnh theo thứ tự, lặp lại 2 ảnh
     let imgSrc = fishImages[i % fishImages.length];
 
     fish.innerHTML = `<img src="${imgSrc}">`;
@@ -91,7 +91,7 @@ for (let i = 0; i < 50; i++) {
 
         // Đổi nền PNG
         let bgIndex = 0;
-        const backgrounds = ['images/bg1.jpg', 'images/bg2.png', 'images/bg3.jpg', 'images/bg4.webp'];
+        const backgrounds = ['images/bg1.jpg', 'images/bg2.png', 'images/bg3.jpg', 'images/phepmau.webp'];
         function changeBackground() {
             bgIndex = (bgIndex + 1) % backgrounds.length;
             document.body.style.backgroundImage = `url('images/${backgrounds[bgIndex]}')`;

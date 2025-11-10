@@ -64,6 +64,22 @@ body {
     width: 100px; /* nhỏ hơn cá lớn để nổi bật */
     filter: drop-shadow(0 0 10px rgba(255,255,0,0.8));
 }
+#cachabach {
+    position: absolute;
+    top: 500px; /* tuỳ chỉnh vị trí */
+    left: 100px;
+    animation: cachabachSwim 20s linear infinite;
+}
+#cachabach img {
+    width: 120px; /* nhỏ lại */
+}
+
+@keyframes cachabachSwim {
+    0%   { left: -150px; }
+    50%  { left: calc(100vw - 150px); }
+    100% { left: -150px; }
+}
+
 
 @keyframes clownSwim {
     0%   { transform: translate(0, 0) scaleX(1); }

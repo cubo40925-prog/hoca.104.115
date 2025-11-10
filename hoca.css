@@ -74,10 +74,10 @@ body {
 }
 
 @keyframes cachabachSwim {
-    0%   { left: -150px; transform: scaleX(1); }
-    50%  { left: calc(100vw - 150px); transform: scaleX(1); }
-    51%  { left: calc(100vw - 150px); transform: scaleX(-1); }
-    100% { left: -150px; transform: scaleX(-1); }
+    0%   { left: -150px; transform: scaleX(-1); }
+    50%  { left: calc(100vw - 150px); transform: scaleX(-1); }
+    51%  { left: calc(100vw - 150px); transform: scaleX(1); }
+    100% { left: -150px; transform: scaleX(1); }
 }
 
 

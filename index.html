@@ -47,6 +47,7 @@
 <script>
 const audio = document.getElementById('musicLofi');
 let current = 0;
+let unlocked = false;
 const tracks = ["inthepool.mp3", "stardust.mp3", "dramamine.mp3"];
 
 // gán bài đầu tiên
@@ -59,23 +60,37 @@ function nextTrack() {
     audio.play();
 }
 
-// chỉ set volume khi load, KHÔNG autoplay
+// chỉ set volume khi load
 window.addEventListener('load', () => {
     audio.volume = 0.6;
 });
 
-// bật/tắt nhạc khi bấm nút
+// mở khóa phát nhạc sau khi có thao tác người dùng
+function unlockAudio() {
+    if (unlocked) return;
+    audio.play().then(() => {
+        unlocked = true;
+        console.log("Nhạc đã được mở khóa!");
+    }).catch(err => console.log("Không phát được:", err));
+}
+
+// bật/tắt nhạc
 function toggleMusic() {
+    unlockAudio();
     if (audio.paused) {
-        audio.play().then(() => {
-            document.getElementById('musicBtn').innerHTML = "Tắt Nhạc";
-        }).catch(err => console.log("Không phát được:", err));
+        audio.play();
+        document.getElementById('musicBtn').innerHTML = "Tắt Nhạc";
     } else {
         audio.pause();
         document.getElementById('musicBtn').innerHTML = "Bật Nhạc";
     }
 }
+
+// mở khóa khi click bất kỳ đâu
+document.body.addEventListener('click', unlockAudio, { once: true });
+document.body.addEventListener('touchstart', unlockAudio, { once: true });
 </script>
+
 
 <button onclick="nextTrack()">Bài tiếp</button>
 

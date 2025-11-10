@@ -40,7 +40,10 @@
     <div id="controls">
         <button onclick="changeBackground()">Đổi Nền (PNG)</button>
         <button onclick="toggleMusic()" id="musicBtn">Bật Nhạc</button>
+        <button onclick="nextTrack()">Bài Tiếp</button>
     </div>
+    <div id="currentTrack">Đang phát: inthepool.mp3</div>
+
 
     <!-- NHẠC TỪ FILE -->
     <audio id="musicLofi" loop preload="auto"></audio>
@@ -58,12 +61,16 @@ function nextTrack() {
     current = (current + 1) % tracks.length;
     audio.src = tracks[current];
     audio.play();
+    document.getElementById('currentTrack').innerText = "Đang phát: " + tracks[current];
 }
+
 
 // chỉ set volume khi load
 window.addEventListener('load', () => {
     audio.volume = 0.6;
+    document.getElementById('currentTrack').innerText = "Đang phát: " + tracks[current];
 });
+
 
 // mở khóa phát nhạc sau khi có thao tác người dùng
 function unlockAudio() {

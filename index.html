@@ -46,13 +46,11 @@
     <audio id="musicLofi" loop preload="auto"></audio>
 <script>
 const audio = document.getElementById('musicLofi');
-let unlocked = false;
 let current = 0;
 const tracks = ["inthepool.mp3", "stardust.mp3", "dramamine.mp3"];
 
-// play bài đầu
+// gán bài đầu tiên
 audio.src = tracks[current];
-audio.play();
 
 // đổi bài
 function nextTrack() {
@@ -60,7 +58,25 @@ function nextTrack() {
     audio.src = tracks[current];
     audio.play();
 }
+
+// chỉ set volume khi load, KHÔNG autoplay
+window.addEventListener('load', () => {
+    audio.volume = 0.6;
+});
+
+// bật/tắt nhạc khi bấm nút
+function toggleMusic() {
+    if (audio.paused) {
+        audio.play().then(() => {
+            document.getElementById('musicBtn').innerHTML = "Tắt Nhạc";
+        }).catch(err => console.log("Không phát được:", err));
+    } else {
+        audio.pause();
+        document.getElementById('musicBtn').innerHTML = "Bật Nhạc";
+    }
+}
 </script>
+
 <button onclick="nextTrack()">Bài tiếp</button>
 
 
